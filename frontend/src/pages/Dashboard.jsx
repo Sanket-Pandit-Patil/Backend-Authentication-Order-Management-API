@@ -17,7 +17,7 @@ const Dashboard = ({ user }) => {
     useEffect(() => {
         const fetchOrders = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/api/orders', config);
+                const response = await axios.get('/api/orders', config);
                 setOrders(response.data);
             } catch (err) {
                 console.error(err);
@@ -29,7 +29,7 @@ const Dashboard = ({ user }) => {
     const onOrderSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:5000/api/order', newOrder, config);
+            const response = await axios.post('/api/order', newOrder, config);
             setOrders([...orders, response.data]);
             setNewOrder({ product_name: '', quantity: 1 });
             setError('');

@@ -23,7 +23,7 @@ const Register = ({ setUser }) => {
     const onSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('http://localhost:5000/api/register', formData);
+            await axios.post('/api/register', formData);
             // Auto login after register or redirect to login (Requirement usually login returns token, register doesn't necessarily)
             // Spec says Login returns token. Register does not. So redirect to login.
             navigate('/login');
